@@ -467,9 +467,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generate-the-inventory-and-the-diagram" class="md-nav__link">
+  <a href="#generate-the-inventory" class="md-nav__link">
     <span class="md-ellipsis">
-      Generate the inventory and the diagram
+      Generate the inventory
     </span>
   </a>
   
@@ -899,9 +899,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generate-the-inventory-and-the-diagram" class="md-nav__link">
+  <a href="#generate-the-inventory" class="md-nav__link">
     <span class="md-ellipsis">
-      Generate the inventory and the diagram
+      Generate the inventory
     </span>
   </a>
   
@@ -941,13 +941,14 @@
 <ul>
 <li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS credentials</a>:
   this is required to create the inventory file, as <code>infra-inspector</code> will need to
-  call AWS APIs;</li>
+  call AWS APIs; please make sure the credentials have all the
+  <a href="../../reference/configuration/aws-permissions/">required permissions</a>;</li>
 <li><a href="https://docs.docker.com/engine/install/">Docker</a>: this is required to install
   <code>infra-inspector</code>.</li>
 </ul>
 <h2 id="install">Install</h2>
 <p>Please follow the <a href="../installation/">installation</a> guide.</p>
-<h2 id="generate-the-inventory-and-the-diagram">Generate the inventory and the diagram</h2>
+<h2 id="generate-the-inventory">Generate the inventory</h2>
 <p>To generate the inventory:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span>~/.aws/credentials:/root/.aws/credentials:ro<span class="w"> </span><span class="se">\</span>
@@ -960,11 +961,14 @@
 <a href="../../reference/configuration/inventory/">inventory configuration file</a> named
 <code>inventory-config.yml</code> and a directory <code>output</code> are in the current folder.</p>
 <p>It also assume that the
-<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS profile</a>
-specified in the config exists in <code>~/.aws/credentials</code>. The profile should have
-the <a href="../../reference/configuration/aws-permissions/">permissions</a> to read all the
-<a href="../../reference/supported_resources/">supported resources</a>, no write permissions
-are needed.</p>
+<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS profile</a>,
+if any, specified in the config exists in <code>~/.aws/credentials</code>. If no profile is
+specified, the credentials will be loaded using the
+<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html">normal process</a>.
+The used credentials should have the
+<a href="../../reference/configuration/aws-permissions/">required read permissions</a> to
+read all the <a href="../../reference/supported_resources/">supported resources</a>, no
+write access is needed.</p>
 <h2 id="generate-the-diagram">Generate the diagram</h2>
 <p>From the inventory we generated above we can then create the diagram with:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>

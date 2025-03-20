@@ -888,8 +888,8 @@
 <div class="highlight"><pre><span></span><code>operation<span class="w"> </span>error<span class="w"> </span>EC2:<span class="w"> </span>DescribeAvailabilityZones,<span class="w"> </span>https<span class="w"> </span>response<span class="w"> </span>error<span class="w"> </span>StatusCode:<span class="w"> </span><span class="m">403</span>,<span class="w"> </span>RequestID:<span class="w"> </span>deae474f-a69f-4f86-aed0-5186e54771ff,<span class="w"> </span>api<span class="w"> </span>error<span class="w"> </span>UnauthorizedOperation:<span class="w"> </span>You<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>authorized<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>this<span class="w"> </span>operation.<span class="w"> </span>User:<span class="w"> </span>arn:aws:iam::<span class="o">[</span>...<span class="o">]</span>:user/your-user<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>authorized<span class="w"> </span>to<span class="w"> </span>perform:<span class="w"> </span>ec2:DescribeAvailabilityZones<span class="w"> </span>because<span class="w"> </span>no<span class="w"> </span>identity-based<span class="w"> </span>policy<span class="w"> </span>allows<span class="w"> </span>the<span class="w"> </span>ec2:DescribeAvailabilityZones<span class="w"> </span>action
 </code></pre></div>
 <p>It means the
-<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">profile</a>
-you're using to pull the info from AWS doesn't have the necessary
+<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">credentials</a>
+you're using to pull the info from AWS don't have the necessary
 <a href="../configuration/aws-permissions/">permissions</a>.</p>
 
 

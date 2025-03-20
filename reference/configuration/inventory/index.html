@@ -834,7 +834,9 @@
 <div class="highlight"><pre><span></span><code><span class="nt">awsAccounts</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Add here an entry for each account you want to inspect</span>
 <span class="w">  </span><span class="p p-Indicator">-</span>
-<span class="w">    </span><span class="c1"># Profile name to access the resources in the account</span>
+<span class="w">    </span><span class="c1"># Profile name to access the resources in the account: this is optional, if</span>
+<span class="w">    </span><span class="c1"># not provided the credentials will be loaded using the normal process</span>
+<span class="w">    </span><span class="c1"># (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html)</span>
 <span class="w">    </span><span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some-profile</span>
 <span class="w">    </span><span class="nt">regions</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># List of regions to inspect</span>
